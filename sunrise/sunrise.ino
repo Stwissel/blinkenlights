@@ -38,7 +38,7 @@ void sunrise() {
   pushColorFromCenter(spreadspeed,strip.Color(102,66,0),2);
   pushColorFromCenter(spreadspeed,strip.Color(119,77,0),4);
   //White
-  //pushColorFromCenter(spreadspeed,strip.Color(127,127,127),4);
+  pushColorFromCenter(spreadspeed,strip.Color(120,120,120),4);
 }
 
 
