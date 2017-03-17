@@ -19,26 +19,28 @@ void setup() {
 
 void loop() {
   sunrise();
-  delay(1000);
+  delay(2000);
   resetColors(0);
   showStrip(50);
 }
 
 void sunrise() {
 
-  int spreadspeed = 350;
+  int spreadspeed = 250;
   // Phase 1 dawn simulation Blue spreads
   spreadColor(spreadspeed, strip.Color(0,0,1), 0);
   pushColorFromCenter(spreadspeed,strip.Color(0,0,32),2);
   pushColorFromCenter(spreadspeed,strip.Color(0,0,96),4);
+  pushColorFromCenter(spreadspeed,strip.Color(50,0,50),4);
   // Phase 2 Red 
-  pushColorFromCenter(spreadspeed,strip.Color(50,0,0),4);
-  // Phase 3 Orange brightening
-  pushColorFromCenter(spreadspeed,strip.Color(70,45,0),2);
-  pushColorFromCenter(spreadspeed,strip.Color(102,66,0),2);
-  pushColorFromCenter(spreadspeed,strip.Color(119,77,0),4);
+  pushColorFromCenter(spreadspeed,strip.Color(50,20,10),4);
+  pushColorFromCenter(spreadspeed,strip.Color(50,50,0),4);
+  // Phase 3 Yellow brightening
+  pushColorFromCenter(spreadspeed,strip.Color(70,45,20),2);
+  pushColorFromCenter(spreadspeed,strip.Color(102,66,30),2);
+  pushColorFromCenter(spreadspeed,strip.Color(119,77,40),4);
   //White
-  pushColorFromCenter(spreadspeed,strip.Color(120,120,120),4);
+  pushColorFromCenter(spreadspeed,strip.Color(120,120,60),8);
 }
 
 

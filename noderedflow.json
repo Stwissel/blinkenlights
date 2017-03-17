@@ -1,0 +1,327 @@
+[
+    {
+        "id": "516ee842.8df878",
+        "type": "tab",
+        "label": "Blinkenlights"
+    },
+    {
+        "id": "8767928.a60bb7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "Helvetica Neue",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Helvetica Neue",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "Helvetica Neue"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3910447d.e5d26c",
+        "type": "http request",
+        "z": "516ee842.8df878",
+        "name": "to BlinkenLights",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "34689b86.3ded24"
+            ]
+        ]
+    },
+    {
+        "id": "34689b86.3ded24",
+        "type": "debug",
+        "z": "516ee842.8df878",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 630,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4b1dfff6.01f84",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Random",
+        "topic": "",
+        "payload": "RD",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 100,
+        "y": 40,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "af58ddaf.a223d",
+        "type": "function",
+        "z": "516ee842.8df878",
+        "name": "create URL",
+        "func": "msg.url = \"http://192.168.1.1/\" + msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "3910447d.e5d26c"
+            ]
+        ]
+    },
+    {
+        "id": "96db600.59afea",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Sunrise",
+        "topic": "",
+        "payload": "SR",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 90,
+        "y": 80,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "7840fce8.63adc4",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Reminder",
+        "topic": "",
+        "payload": "RE",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "898a7bc2.ebd0c8",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Incoming call",
+        "topic": "",
+        "payload": "I",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "4f3de798.8a7798",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Visitors",
+        "topic": "",
+        "payload": "V",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "211fa348.30292c",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Bad Weather",
+        "topic": "",
+        "payload": "WB",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "50b19503.3ab44c",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Good Weather",
+        "topic": "",
+        "payload": "WG",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "7c956da6.727534",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Stocks",
+        "topic": "",
+        "payload": "ST",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "e925440.b8f02c",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Alert Notification",
+        "topic": "",
+        "payload": "N",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 120,
+        "y": 360,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    },
+    {
+        "id": "4ae74273.8e0ffc",
+        "type": "inject",
+        "z": "516ee842.8df878",
+        "name": "Cylons",
+        "topic": "",
+        "payload": "C",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "af58ddaf.a223d"
+            ]
+        ]
+    }
+]

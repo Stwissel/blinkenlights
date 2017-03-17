@@ -45,7 +45,7 @@ void loop() {
   colorWipe(strip.Color(0, 127,0), 20);     // green
   colorWipe(strip.Color(0,0,127), 20);      // blue
   colorWipe(strip.Color(0,0,0), 20);        // black
-/*
+
   // Color sparkles
   dither(strip.Color(0,127,127), 50);       // cyan, slow
   dither(strip.Color(0,0,0), 15);           // black, fast
@@ -53,7 +53,7 @@ void loop() {
   dither(strip.Color(0,0,0), 15);           // black, fast
   dither(strip.Color(127,127,0), 50);       // yellow, slow
   dither(strip.Color(0,0,0), 15);           // black, fast
-*/
+
   // Back-and-forth lights
   scanner(127,0,0, 30);        // red, slow
   scanner(0,0,127, 15);        // blue, fast
