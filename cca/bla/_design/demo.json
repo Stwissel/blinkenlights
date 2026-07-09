@@ -1,0 +1,7 @@
+{
+  "views": {
+    "test": {
+      "map": "function(doc) {\n  emit(doc._id, null);\n}"
+    }
+  }
+}
