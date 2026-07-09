@@ -4,7 +4,7 @@
   },
   "views": {
     "food": {
-      "map": "function (doc) {\n  if (doc.food) {\n    emit(doc._id, { food: doc.food, number: 43 });\n  }\n}"
+      "map": "function (doc) {\n  if (doc.food) {\n    emit(doc._id, { food: doc.food, number: 44 });\n  }\n}"
     }
   }
 }
