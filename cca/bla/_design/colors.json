@@ -1,0 +1,10 @@
+{
+  "filters": {
+    "colorfull": "function (doc, req) {\n  return doc.color ? true : false;\n}"
+  },
+  "views": {
+    "food": {
+      "map": "function (doc) {\n  if (doc.food) {\n    emit(doc._id, doc.food);\n  }\n}"
+    }
+  }
+}
