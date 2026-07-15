@@ -1,0 +1,41 @@
+{
+  "language": "query",
+  "views": {
+    "color-shape-idx": {
+      "map": {
+        "fields": {
+          "color": "asc",
+          "shape": "asc"
+        },
+        "partial_filter_selector": {}
+      },
+      "options": {
+        "def": {
+          "fields": [
+            "color",
+            "shape"
+          ],
+          "partial_filter_selector": {}
+        }
+      },
+      "reduce": "_count"
+    },
+    "ssss": {
+      "map": {
+        "fields": {
+          "color": "asc"
+        },
+        "partial_filter_selector": {}
+      },
+      "options": {
+        "def": {
+          "fields": [
+            "color"
+          ],
+          "partial_filter_selector": {}
+        }
+      },
+      "reduce": "_count"
+    }
+  }
+}
